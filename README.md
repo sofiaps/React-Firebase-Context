@@ -3,9 +3,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 -Main Page with links to different categories
+
 -Sign In/Sign Up Page
+
 -Shope Page with different categories with 4 sample products of each (Category Title as Link to Category Page)
+
 -Cart with Products
+
 -Checkout Page
 
 

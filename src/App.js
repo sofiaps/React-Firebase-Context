@@ -1,12 +1,6 @@
-import { useContext } from "react";
-import { Routes, Route, Navigate, createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import { UserContext } from "./contexts/user.context";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./routes/home/home.component";
-import Navigation from "./routes/navigation/navigation.component";
 import Authentication from "./routes/authentication/authentication.component";
-import Shop from "./routes/shop/shop.component";
 import Checkout from "./routes/checkout/checkout.component";
 import RootLayout from "./routes/dashboard/dashboard.component";
 import ErrorPage from "./routes/error-page/error-page.component";
@@ -15,7 +9,6 @@ import Category from "./routes/category/category.component";
 import CategoriesWrapper from "./routes/categories-wraper/categories-wrapper.component";
 
 const App = () => {
-  const { currentUser } = useContext(UserContext);
   const router = createBrowserRouter([
     {
       path: "/",
@@ -35,7 +28,7 @@ const App = () => {
           path: "shop/:category",
           element: <Category />,
         },
-        { path: "auth", element: currentUser ? <Home /> : <Authentication /> },
+        { path: "auth", element: <Authentication /> },
         { path: "checkout", element: <Checkout /> },
       ],
     },

@@ -6,7 +6,7 @@ import RootLayout from "./routes/dashboard/dashboard.component";
 import ErrorPage from "./routes/error-page/error-page.component";
 import CategoriesPreview from "./routes/categories-preview/categories-preview.component";
 import Category from "./routes/category/category.component";
-import CategoriesWrapper from "./routes/categories-wraper/categories-wrapper.component";
+import Shop from "./routes/shop/shop.component";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -18,15 +18,11 @@ const App = () => {
         { index: true, element: <Home /> },
         {
           path: "shop",
-          element: <CategoriesWrapper />,
+          element: <Shop />,
           children: [
             { index: true, element: <CategoriesPreview /> },
             {path: ':category', element: <Category/>}
           ],
-        },
-        {
-          path: "shop/:category",
-          element: <Category />,
         },
         { path: "auth", element: <Authentication /> },
         { path: "checkout", element: <Checkout /> },
